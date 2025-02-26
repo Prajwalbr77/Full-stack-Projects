@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Booking</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d7d7d7;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  form {
+    display: grid;
+    gap: 20px;
+  }
+  label {
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    outline: none;
+  }
+  select {
+    appearance: none;
+  }
+  button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  .form-group {
+    display: grid;
+    gap: 5px;
+  }
+  .form-group label,
+  .form-group input,
+  .form-group select {
+    width: 100%;
+  }
+  .trip-type {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .summary {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Book Your Travel</h1>
+  <form>
+    <div class="form-group">
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination" required>
+    </div>
+    <div class="form-group">
+      <label for="departure">Departure Date:</label>
+      <input type="date" id="departure" name="departure" required>
+    </div>
+    <div class="form-group">
+      <label for="return">Return Date:</label>
+      <input type="date" id="return" name="return" required>
+    </div>
+    <div class="form-group">
+      <label for="adults">Adults:</label>
+      <select id="adults" name="adults" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="children">Children:</label>
+      <select id="children" name="children" required>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+    <div class="form-group trip-type">
+      <label>Trip Type:</label>
+      <label><input type="radio" name="trip-type" value="one-way" required> One-way</label>
+      <label><input type="radio" name="trip-type" value="round-trip" required> Round Trip</label>
+    </div>
+    <button type="submit">Book Now</button>
+  </form>
+  <div class="summary">
+    <h2>Booking Summary</h2>
+    <p><strong>Destination:</strong> <span id="summary-destination"></span></p>
+    <p><strong>Departure Date:</strong> <span id="summary-departure"></span></p>
+    <p><strong>Return Date:</strong> <span id="summary-return"></span></p>
+    <p><strong>Adults:</strong> <span id="summary-adults"></span></p>
+    <p><strong>Children:</strong> <span id="summary-children"></span></p>
+    <p><strong>Trip Type:</strong> <span id="summary-trip-type"></span></p>
+  </div>
+</div>
+<script>
+  const form = document.querySelector('form');
+  const summaryDestination = document.getElementById('summary-destination');
+  const summaryDeparture = document.getElementById('summary-departure');
+  const summaryReturn = document.getElementById('summary-return');
+  const summaryAdults = document.getElementById('summary-adults');
+  const summaryChildren = document.getElementById('summary-children');
+  const summaryTripType = document.getElementById('summary-trip-type');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    summaryDestination.textContent = form.destination.value;
+    summaryDeparture.textContent = form.departure.value;
+    summaryReturn.textContent = form.return.value;
+    summaryAdults.textContent = form.adults.value;
+    summaryChildren.textContent = form.children.value;
+    summaryTripType.textContent = document.querySelector('input[name="trip-type"]:checked').value;
+    document.querySelector('.summary').style.display = 'block';
+  });
+</script>
+</body>
+</html>

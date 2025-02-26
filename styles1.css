@@ -1,0 +1,127 @@
+:root {
+    --text-color: #ffffff;
+    --bg-color: #000000;
+    --main-color: #0e140e;
+
+    --h1-font: 4rem;
+    --h2-font: 3rem;
+    --p-font: 1rem;
+}
+
+/* Reset some default styles */
+html, body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-image: url("img/Background.png");
+}
+
+header {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 0px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: var(--h1-font);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 15px;
+    color: var(--main-color);
+}
+
+/* Update tour card styles */
+.tour-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.tour-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+.tour-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Add styling for form elements and other components as needed */
+
+/* Colorize the page */
+a {
+    color: var(--main-color);
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #e0842e;
+}
+
+/* Form elements */
+form input[type="text"],
+form input[type="email"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer */
